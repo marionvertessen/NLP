@@ -6,7 +6,7 @@ class RNN(nn.Module):
         super(RNN, self).__init__()
 
         self.hidden_size = hidden_size
-        self.i2e = nn.Linear(input_size, emb_size)
+        self.i2e = nn.Embedding(input_size, emb_size)
         self.i2h = nn.Linear(emb_size + hidden_size, hidden_size)
         self.i2o = nn.Linear(emb_size + hidden_size, output_size)
         self.softmax = nn.LogSoftmax(dim=1)
